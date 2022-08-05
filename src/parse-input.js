@@ -24,14 +24,14 @@ const parseInput = (str, type, inputDelimiter, inputFeatures) => {
   }
 
   if (type === 'csv') {
-    return require('csv-parse/lib/sync')(str, {
+    return require("csv-parse/sync")(str, {
       columns,
       relax_column_count: true, // eslint-disable-line camelcase
     })
   }
 
   if (type === 'tsv') {
-    return require('csv-parse/lib/sync')(str, {
+    return require("csv-parse/sync")(str, {
       delimiter: '\t',
       columns,
       relax_column_count: true, // eslint-disable-line camelcase
@@ -39,7 +39,7 @@ const parseInput = (str, type, inputDelimiter, inputFeatures) => {
   }
 
   if (type === 'dsv') {
-    return require('csv-parse/lib/sync')(str, {
+    return require("csv-parse/sync")(str, {
       delimiter: inputDelimiter,
       columns,
       relax_column_count: true, // eslint-disable-line camelcase
